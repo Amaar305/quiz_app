@@ -22,11 +22,6 @@ class QuizBrain {
   }
 
   String getQuestionText() {
-    print(_score);
-
-    if (_questionBank[_questionNumber].questionAnswer) {
-      _score++;
-    }
     return _questionBank[_questionNumber].questionText;
   }
 
@@ -44,6 +39,15 @@ class QuizBrain {
       return true;
     } else {
       return false;
+    }
+  }
+
+  /// Call this when user submits an answer
+  void checkAnswer(bool userAnswer) {
+    print(_score);
+
+    if (userAnswer == _questionBank[_questionNumber].questionAnswer) {
+      _score++;
     }
   }
 

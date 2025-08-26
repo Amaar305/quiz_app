@@ -17,6 +17,7 @@ class _QuizPageState extends State<QuizPage> {
   int score = 0;
 
   void checkAnswer(bool userPickedAnswer) {
+    quizBrain.checkAnswer(userPickedAnswer);
     bool correctAnswer = quizBrain.getCorrectAnswer();
 
     setState(() {
